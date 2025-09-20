@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye padding y border en el ancho/altura total del elemento */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fondo degradado para dar profundidad visual */
+    color: #333; /* Color de texto oscuro para contraste */
+    padding: 0;
+    margin: 0;
+}
+
+/* HEADER con nuevo fondo */
+header {
+    background: rgba(255, 255, 255, 0.15); /* Fondo blanco semitransparente para efecto "glass" */
+    backdrop-filter: blur(10px); /*  Difumina el fondo detrás del header (efecto vidrio esmerilado) */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con navegadores basados en WebKit (Safari) */
+    padding: 2rem 0; /* Espaciado vertical interno */
+    text-align: center; /* Centra el contenido horizontalmente */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde inferior sutil para separar visualmente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para elevar visualmente el header */
+}
+
+header h1 {
+    color: white; /* Texto blanco para contraste sobre fondo oscuro */
+    font-size: 2.5rem; /* Tamaño grande para impacto visual */
+    margin-bottom: 0.5rem; /* Espacio inferior para separar del subtítulo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /*  Sombra de texto: da profundidad y legibilidad sobre fondos complejos */
+}
+
+header .muted {
+    color: rgba(255, 255, 255, 0.8); /* Texto ligeramente transparente para efecto secundario */
+    font-size: 1.1rem; /* Tamaño ligeramente menor que el título principal */
+}
+
+/*  Menú de navegación con efecto GLASS */
+nav {
+    background: rgba(255, 255, 255, 0.1); /* Fondo casi transparente para efecto flotante */
+    backdrop-filter: blur(12px); /*  Aumenta el efecto "glass" con más desenfoque que el header */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Borde sutil para definir los límites del menú */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para destacar el menú */
+    padding: 1rem 0; /* Espaciado vertical interno */
+    position: sticky; /*  Se queda fijo al hacer scroll (solo si el contenedor lo permite) */
+    top: 0; /* Pega el menú al tope de la ventana al hacer scroll */
+    z-index: 100; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+nav ul {
+    display: flex; /*  Dispone los elementos en fila horizontal */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    list-style: none; /* Elimina los bullets de la lista */
+    gap: 2rem; /*  Espacio uniforme entre elementos de la lista (moderno, reemplaza margins) */
+}
+
+nav a {
+    color: white;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: 500; /* Grosor de fuente seminegrita para mejor legibilidad */
+    padding: 0.5rem 1rem; /* Relleno interno para área de clic más cómoda */
+    border-radius: 25px; /* Bordes redondeados para estilo moderno de botón */
+    transition: all 0.3s ease; /*  Transición suave para TODAS las propiedades modificables en hover (escala, color, sombra, etc.) */
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2); /*  Fondo ligeramente más opaco al pasar el mouse */
+    transform: translateY(-2px); /*  Efecto de "elevarse" ligeramente al hacer hover */
+}
+
+/* Estilos para secciones (tarjetas) */
+section {
+    max-width: 900px; /* Limita el ancho máximo para pantallas grandes */
+    margin: 3rem auto; /* Centra la sección y da márgenes superior/inferior */
+    padding: 2rem; /* Espaciado interno generoso */
+    background: rgba(255, 255, 255, 0.85); /*  Fondo blanco semitransparente (efecto tarjeta flotante) */
+    border-radius: 16px; /*  Bordes muy redondeados para estilo moderno tipo "card" */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar sensación de elevación */
+    backdrop-filter: blur(5px); /*  Ligero desenfoque del fondo detrás de la tarjeta (glass suave) */
+}
+
+section h2 {
+    color: #555; /* Color gris oscuro para títulos de sección */
+    margin-bottom: 1.5rem; /* Espacio bajo el título */
+    padding-bottom: 0.5rem; /* Espacio interno bajo el texto antes del borde */
+    border-bottom: 2px solid #667eea; /* Línea decorativa bajo el título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /*  Sombra sutil para dar profundidad sin saturar */
+}
+
+/*  Animación en botones */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /*  Degradado moderno como fondo del botón */
+    color: white;
+    border: none; /* Elimina borde por defecto del botón */
+    padding: 0.8rem 2rem; /* Relleno generoso para mejor usabilidad */
+    font-size: 1rem;
+    border-radius: 50px; /*  Bordes completamente redondeados (estilo pill) */
+    cursor: pointer; /* Cambia el cursor a "mano" para indicar clickeable */
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); /*  Sombra con tono del degradado para integración visual */
+    transition: all 0.3s ease; /*  Prepara animación suave para hover */
+}
+
+button:hover {
+    transform: scale(1.05) translateY(-3px); /*  Aumenta tamaño y eleva el botón al hacer hover */
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6); /*  Sombra más intensa y extendida al hacer hover */
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); /*  Invierte el degradado para feedback visual */
+}
+
+/* Estilos para formularios */
+input, textarea {
+    width: 100%; /* Ocupan todo el ancho del contenedor */
+    padding: 0.8rem; /* Espaciado interno para texto */
+    margin-bottom: 1rem; /* Espacio bajo cada campo */
+    border: 1px solid #ddd; /* Borde gris claro por defecto */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    font-size: 1rem;
+    transition: border 0.3s ease; /*  Transición solo en el borde para efecto sutil al enfocar */
+}
+
+input:focus, textarea:focus {
+    outline: none; /* Elimina el contorno por defecto del navegador (poco estético) */
+    border-color: #667eea; /*  Cambia color del borde al enfocar (feedback visual) */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2); /*  Resalte sutil con sombra interna al enfocar */
+}
+
+/* Galería - imágenes uniformes */
+.imagen-uniforme {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /*  Mantiene proporción y evita recortes o distorsión */
+    margin: 0 10px; /* Espacio horizontal entre imágenes */
+    transition: transform 0.3s ease; /*  Solo anima la transformación (escala) al hacer hover */
+}
+
+.imagen-uniforme:hover {
+    transform: scale(1.1); /*  Aumenta tamaño ligeramente al pasar el mouse */
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse; /*  Elimina espacios entre bordes de celdas */
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 0.8rem; /* Relleno interno en celdas */
+    text-align: left; /* Alineación del texto */
+    border-bottom: 1px solid #eee; /* Separador sutil entre filas */
+}
+
+th {
+    background-color: #f8f9fa; /* Fondo gris muy claro para encabezados */
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1); /*  Fondo negro muy transparente para contraste suave */
+    color: white;
+    font-size: 0.9rem;
+}
+
