@@ -50,10 +50,10 @@ nav {
 }
 
 nav ul {
-    display: flex; /*  Dispone los elementos en fila horizontal */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    list-style: none; /* Elimina los bullets de la lista */
-    gap: 2rem; /*  Espacio uniforme entre elementos de la lista (moderno, reemplaza margins) */
+    display: flex !important; /*  Dispone los elementos en fila horizontal */
+    justify-content: center !important; /* Centra los elementos horizontalmente */
+    list-style: none !important; /* Elimina los bullets de la lista */
+    gap: 2rem !important; /*  Espacio uniforme entre elementos de la lista (moderno, reemplaza margins) */
 }
 
 nav a {
@@ -154,6 +154,20 @@ th, td {
 th {
     background-color: #f8f9fa; /* Fondo gris muy claro para encabezados */
     color: #555;
+}
+
+:root {
+    --bs-primary: #667eea; /* Cambia el color primario de Bootstrap a uno degradado */
+    --bs-primary-rgb: 102, 126, 234; 
+}
+
+/*c ontraste en los textos primarios */
+.text-primary {
+    color: #667eea !important;
+}
+
+.border-primary {
+    border-color: #667eea !important;
 }
 
 /* Footer */
