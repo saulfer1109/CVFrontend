@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
-    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fondo degradado para dar profundidad visual */
-    color: #333; /* Color de texto oscuro para contraste */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: url('imagenes/photo-1534972195531-d756b9bfa9f2.avif') no-repeat center center fixed; /* Imagen de café */
+    background-size: cover;
+    color: #333;
     padding: 0;
     margin: 0;
 }
@@ -28,7 +29,7 @@ header h1 {
     color: white; /* Texto blanco para contraste sobre fondo oscuro */
     font-size: 2.5rem; /* Tamaño grande para impacto visual */
     margin-bottom: 0.5rem; /* Espacio inferior para separar del subtítulo */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /*  Sombra de texto: da profundidad y legibilidad sobre fondos complejos */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /*  Sombra de texto: da profundidad y legibilidad sobre fondos complejos */
 }
 
 header .muted {
@@ -174,8 +175,128 @@ th {
 footer {
     text-align: center;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.1); /*  Fondo negro muy transparente para contraste suave */
-    color: white;
+    background: rgba(128, 128, 128, 0.2); /* Gris cristalino semitransparente */
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con WebKit */
+    color: #ffffff; /* Texto blanco para contraste */
     font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil en la parte superior */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera desde abajo */
+    width: 100%;
+    position: relative; /* Asegura que se mantenga en su lugar */
+    bottom: 0; /* Lo fija en la parte inferior si es necesario */
+    margin-top: 2rem; /* Espacio superior para separarlo del contenido */
 }
 
+/* Estilos para la foto de perfil */
+.profile-pic {
+    width: 150px; /* Tamaño fijo para la foto */
+    height: 150px;
+    border-radius: 50%; /* Imagen circular */
+    border: 4px solid #667eea; /* Borde temático azul */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    object-fit: cover; /* Evita distorsión */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para el efecto hover */
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* Aumenta ligeramente al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4); /* Sombra más intensa */
+}
+
+/* Estilos para el separador de secciones */
+.section-divider {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, #667eea, #764ba2); /* Degradado temático */
+    margin: 2rem 0;
+    border-radius: 2px;
+    position: relative;
+}
+
+.section-divider::before {
+    content: "★"; /* Ícono de estrella (puedes cambiarlo por otro emoji o SVG) */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+    background: #fff;
+    padding: 0 10px;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+/* Estilos para la sección de información personal y experiencia en dos columnas */
+.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.personal-info, .experience-education {
+    flex: 1;
+    min-width: 250px; /* Para pantallas pequeñas */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .two-columns {
+        flex-direction: column;
+    }
+}
+
+/* Estilos para la sección de habilidades con barras de progreso */
+.skills {
+    display: grid;
+    gap: 1rem;
+}
+
+.skill p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.progress-bar {
+    background: #eee;
+    border-radius: 25px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* Estilos para los enlaces sociales y descarga de CV */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-icon {
+    display: inline-block;
+}
+
+.social-img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.download-cv {
+    margin-top: 1rem;
+    display: inline-block;
+}
