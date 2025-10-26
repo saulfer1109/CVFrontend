@@ -1,13 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Incluye padding y border en el ancho/altura total del elemento */
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background: url('imagenes/photo-1534972195531-d756b9bfa9f2.avif') no-repeat center center fixed; /* Imagen de café */
+    background: url('imagenes/photo-1534972195531-d756b9bfa9f2.avif') no-repeat center center fixed; /* Imagen de fondo en todas las paginas */
     background-size: cover;
     color: #333;
     padding: 0;
@@ -18,7 +18,6 @@ body {
 header {
     background: rgba(255, 255, 255, 0.15); /* Fondo blanco semitransparente para efecto "glass" */
     backdrop-filter: blur(10px); /*  Difumina el fondo detrás del header (efecto vidrio esmerilado) */
-    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con navegadores basados en WebKit (Safari) */
     padding: 2rem 0; /* Espaciado vertical interno */
     text-align: center; /* Centra el contenido horizontalmente */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde inferior sutil para separar visualmente */
@@ -29,7 +28,7 @@ header h1 {
     color: white; /* Texto blanco para contraste sobre fondo oscuro */
     font-size: 2.5rem; /* Tamaño grande para impacto visual */
     margin-bottom: 0.5rem; /* Espacio inferior para separar del subtítulo */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /*  Sombra de texto: da profundidad y legibilidad sobre fondos complejos */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /*  Sombra de textos */
 }
 
 header .muted {
@@ -37,7 +36,7 @@ header .muted {
     font-size: 1.1rem; /* Tamaño ligeramente menor que el título principal */
 }
 
-/*  Menú de navegación con efecto GLASS */
+/*  Menú de navegación con efecto GLASS(transparente) */
 nav {
     background: rgba(255, 255, 255, 0.1); /* Fondo casi transparente para efecto flotante */
     backdrop-filter: blur(12px); /*  Aumenta el efecto "glass" con más desenfoque que el header */
@@ -45,7 +44,7 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.18); /* Borde sutil para definir los límites del menú */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para destacar el menú */
     padding: 1rem 0; /* Espaciado vertical interno */
-    position: sticky; /*  Se queda fijo al hacer scroll (solo si el contenedor lo permite) */
+    position: static; /*  Se queda fijo al hacer scroll */
     top: 0; /* Pega el menú al tope de la ventana al hacer scroll */
     z-index: 100; /* Asegura que el menú esté por encima de otros elementos */
 }
@@ -54,15 +53,15 @@ nav ul {
     display: flex !important; /*  Dispone los elementos en fila horizontal */
     justify-content: center !important; /* Centra los elementos horizontalmente */
     list-style: none !important; /* Elimina los bullets de la lista */
-    gap: 2rem !important; /*  Espacio uniforme entre elementos de la lista (moderno, reemplaza margins) */
+    gap: 2rem !important; /*  Espacio uniforme entre elementos de la lista (sesupone que es lo que usara en lugar del margin) */
 }
 
 nav a {
     color: white;
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    text-decoration: none; /* Eliminamos el subrayado de los enlaces */
     font-weight: 500; /* Grosor de fuente seminegrita para mejor legibilidad */
     padding: 0.5rem 1rem; /* Relleno interno para área de clic más cómoda */
-    border-radius: 25px; /* Bordes redondeados para estilo moderno de botón */
+    border-radius: 25px; /* Bordes redondeados para un estilo moderno de botón */
     transition: all 0.3s ease; /*  Transición suave para TODAS las propiedades modificables en hover (escala, color, sombra, etc.) */
 }
 
@@ -98,7 +97,7 @@ button {
     padding: 0.8rem 2rem; /* Relleno generoso para mejor usabilidad */
     font-size: 1rem;
     border-radius: 50px; /*  Bordes completamente redondeados (estilo pill) */
-    cursor: pointer; /* Cambia el cursor a "mano" para indicar clickeable */
+    cursor: pointer; /* Cambia el cursor a "mano" para indicar clickeable (algo que segun yo se ponia en automatico) */
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); /*  Sombra con tono del degradado para integración visual */
     transition: all 0.3s ease; /*  Prepara animación suave para hover */
 }
@@ -109,7 +108,7 @@ button:hover {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); /*  Invierte el degradado para feedback visual */
 }
 
-/* Estilos para formularios */
+/* Estilos para formularios (que ya no estamos usando) */
 input, textarea {
     width: 100%; /* Ocupan todo el ancho del contenedor */
     padding: 0.8rem; /* Espaciado interno para texto */
@@ -184,7 +183,7 @@ footer {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera desde abajo */
     width: 100%;
     position: relative; /* Asegura que se mantenga en su lugar */
-    bottom: 0; /* Lo fija en la parte inferior si es necesario */
+    bottom: 0; /* Lo fija en la parte inferior */
     margin-top: 2rem; /* Espacio superior para separarlo del contenido */
 }
 
@@ -299,4 +298,35 @@ footer {
 .download-cv {
     margin-top: 1rem;
     display: inline-block;
+}
+/* Estilos para el mapa de habilidades 
+estamos aplicando el estilo en solamente al elemento html que tiene por id "skillmap" al usar el #*/
+#skillmap {
+    max-width: 800px; /* Un poco más ancho para el gráfico */
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+#skillmap .container {
+    padding: 1rem 0; /* Espaciado interno */
+}
+
+#skillmap img {
+    display: block; /* Asegura que la imagen ocupe su propio espacio */
+    margin: 20px auto; /* Centramos la imagen horizontalmente dentro del contenedor */
+    border: 3px solid rgba(102, 126, 234, 0.3); /* un borde sutil */
+    border-radius: 10px; /* Bordes suaves */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto hover */
+    max-width: 90%; 
+    height: auto
+}
+#skillmap img:hover {
+    transform: scale(1.02); /* Ligeramente más grande al pasar el ratón */
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4); /* Sombra más fuerte y con color temático */
 }
